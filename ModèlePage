@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/FaussePiste.css">
-    <title>Les Archives d'Anubis</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Hiérarchie d'Anubis</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Projet Anubis</h1>
-        <p>Bienvenue</p>
-        <p>Si vous lisez ceci vous avez reussi à passé les testes pour nous rejoindre.</p>
-        <div id="bouton">
-            <a href="doc.html" class="ui-btn">
-                <span>
-                    revenir en arrière
-                </span>
-            </a>
+    <header>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Rechercher une page...">
+            <button onclick="searchPage()">Rechercher</button>
         </div>
+        <p id="errorMessage" style="color: red; display: none; text-align: center;">Page introuvable</p>
+    </header>
+
+    <div class="container">
+        <h1>DAMOCLES</h1>
+        <p>Scientifique en chef</p>
+        <p>Membre du conseil</p>
+        <p>Imminent chercheur ayant étudié à ////////, il fut approché par le grand Monarque pour diriger le projet ////////.</p>
+        <p>Il étudia l'IS-1895 d'où il put avoir des échantillons intéressants pour ////////.</p>
     </div>
+
+    <script>
+        function searchPage() {
+            const input = document.getElementById('searchInput').value.trim().toLowerCase(); // Normalise l'entrée
+            const pages = ['damocles', 'IS-1895', 'hierarchie']; // Liste des pages sans extension
+
+            if (pages.includes(input)) {
+                window.location.href = input + '.html'; // Ajoute l'extension pour rediriger
+            } else {
+                document.getElementById('errorMessage').style.display = 'block'; // Affiche le message d'erreur
+            }
+        }
+    </script>
 </body>
 </html>

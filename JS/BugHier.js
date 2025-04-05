@@ -18,7 +18,7 @@ if (window.location.pathname.includes('hiérarchie.html')) {
         flashImage.style.alignItems = 'center';
 
         const img = document.createElement('img');
-        img.src = 'necro.jpg';
+        img.src = '../Image/necro.jpg';
         img.alt = 'Flash Image';
         img.style.maxWidth = '90%';
         img.style.maxHeight = '90%';

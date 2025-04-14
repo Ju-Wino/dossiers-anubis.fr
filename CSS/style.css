@@ -12,8 +12,11 @@ body {
 }
 
 .container {
-    border: 2px solid red;
+    position: relative;
     padding: 20px;
+    color: white;
+    z-index: 1;
+    border: 2px solid red;
     display: inline-block;
     box-shadow: 0 0 20px red;
 }
@@ -255,4 +258,49 @@ header {
 .search-bar button:hover {
     background-color: red; /* Fond rouge au survol */
     color: black; /* Texte noir au survol */
+}
+
+.background-image {
+    background: url('../../../Image/OsiB.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.8; /* Ajustez la transparence */
+    color: white; /* Assurez-vous que le texte reste lisible */
+}
+
+.o-container {
+    display: inline-block;
+    position: relative;
+    width: 1em; /* Taille du "O" */
+    height: 1em; /* Taille du "O" */
+    vertical-align: middle;
+}
+
+.o-image {
+    position: absolute;
+    top: 0; /* Ajustez cette valeur pour déplacer l'image verticalement */
+    left: 0; /* Ajustez cette valeur pour déplacer l'image horizontalement */
+    width: 100%; /* Ajuste la largeur pour remplir le "O" */
+    height: 100%; /* Ajuste la hauteur pour remplir le "O" */
+    object-fit: contain; /* Garde les proportions de l'image */
+    border-radius: 50%; /* Rend l'image circulaire */
+}
+
+.logo-background {
+    position: relative;
+    padding: 20px;
+    color: white;
+    z-index: 1;
+}
+
+.logo-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../Image/OsiB.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.1; /* Transparence uniquement pour l'image */
+    z-index: -1; /* Place l'image derrière le contenu */
 }

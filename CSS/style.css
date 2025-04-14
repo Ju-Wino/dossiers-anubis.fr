@@ -1,306 +1,130 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 190vh;
-    margin: 0;
-    background-color: black;
-    color: red;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    padding-top: 60px; /* Pour éviter que le contenu soit masqué par la barre fixe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 190vh;
+  margin: 0;
+  background-color: black;
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding-top: 60px;
 }
 
 .container {
-    position: relative;
-    padding: 20px;
-    color: white;
-    z-index: 1;
-    border: 2px solid red;
-    display: inline-block;
-    box-shadow: 0 0 20px red;
+  position: relative;
+  padding: 20px;
+  color: white;
+  z-index: 1;
+  border: 2px solid red;
+  display: inline-block;
+  box-shadow: 0 0 20px red;
 }
 
 h1 {
-    font-size: 3em;
-    text-transform: uppercase;
+  font-size: 3em;
+  text-transform: uppercase;
 }
 
 p {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
-
-#bouton {
-    border: 2px solid red;
-    padding: 1px;
-    display: inline-block;
-    box-shadow: 0 0 20px red;
-}
-.ui-btn {
-    margin-left: auto;
-    margin-right: auto;
-    --btn-default-bg: rgb(0, 0, 0);
-    --btn-padding: 15px 20px;
-    --btn-hover-bg: rgb(0, 0, 0);
-    --btn-transition: .3s;
-    --btn-letter-spacing: .1rem;
-    --btn-animation-duration: 1.2s;
-    --btn-shadow-color: rgba(0, 0, 0, 0.137);
-    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
-    --hover-btn-color: red;
-    --default-btn-color: #a7a7a7;
-    --font-size: 16px;
-    --font-weight: 600;
-    --font-family: Menlo,Roboto Mono,monospace;
-
-  }
-.ui-btn {
-    box-sizing: border-box;
-    padding: var(--btn-padding);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--default-btn-color);
-    font: var(--font-weight) var(--font-size) var(--font-family);
-    background: var(--btn-default-bg);
-    border: none;
-    cursor: pointer;
-    transition: var(--btn-transition);
-    overflow: hidden;
-    box-shadow: var(--btn-shadow);
-  }
-
-  .ui-btn span {
-    letter-spacing: var(--btn-letter-spacing);
-    transition: var(--btn-transition);
-    box-sizing: border-box;
-    position: relative;
-    background: inherit;
-  }
-
-  .ui-btn span::before {
-    box-sizing: border-box;
-    position: absolute;
-    content: "";
-    background: inherit;
-  }
-
-  .ui-btn:hover, .ui-btn:focus {
-    background: var(--btn-hover-bg);
-  }
-
-  .ui-btn:hover span, .ui-btn:focus span {
-    color: var(--hover-btn-color);
-  }
-
-  .ui-btn:hover span::before, .ui-btn:focus span::before {
-    animation: chitchat linear both var(--btn-animation-duration);
-  }
-
-  @keyframes chitchat {
-    0% {
-      content: "#";
-    }
-
-    5% {
-      content: ".";
-    }
-
-    10% {
-      content: "^{";
-    }
-
-    15% {
-      content: "-!";
-    }
-
-    20% {
-      content: "#$_";
-    }
-
-    25% {
-      content: "№:0";
-    }
-
-    30% {
-      content: "#{+.";
-    }
-
-    35% {
-      content: "@}-?";
-    }
-
-    40% {
-      content: "?{4@%";
-    }
-
-    45% {
-      content: "=.,^!";
-    }
-
-    50% {
-      content: "?2@%";
-    }
-55% {
-      content: ";1}]";
-    }
-
-    60% {
-      content: "?{%:%";
-      right: 0;
-    }
-
-    65% {
-      content: "|{f[4";
-      right: 0;
-    }
-
-    70% {
-      content: "{4%0%";
-      right: 0;
-    }
-
-    75% {
-      content: "'1_0<";
-      right: 0;
-    }
-
-    80% {
-      content: "{0%";
-      right: 0;
-    }
-
-    85% {
-      content: "]>'";
-      right: 0;
-    }
-
-    90% {
-      content: "4";
-      right: 0;
-    }
-
-    95% {
-      content: "2";
-      right: 0;
-    }
-
-    100% {
-      content: "";
-      right: 0;
-    }
-  }
 
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: black; /* Couleur de fond noire */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.5); /* Ombre rouge */
-    z-index: 1000;
-    border-bottom: 2px solid red; /* Bordure rouge */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    margin-right: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(255, 0, 0, 0.5);
+  z-index: 1000;
+  border-bottom: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo-img {
-    height: 50px; /* Ajustez la taille selon vos besoins */
-    width: auto;
+  height: 50px;
+  width: auto;
 }
 
 .search-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 10px;
-    background-color: black; /* Couleur de fond noire */
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 10px;
+  background-color: black;
 }
 
 .search-bar input {
-    padding: 8px;
-    font-size: 16px;
-    margin-right: 10px;
-    border: 2px solid red; /* Bordure rouge */
-    border-radius: 4px;
-    background-color: black; /* Fond noir */
-    color: red; /* Texte rouge */
-    width: 70%;
+  padding: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+  border: 2px solid red;
+  border-radius: 4px;
+  background-color: black;
+  color: red;
+  width: 70%;
 }
 
 .search-bar input::placeholder {
-    color: red; /* Placeholder rouge */
-    opacity: 0.7;
+  color: red;
+  opacity: 0.7;
 }
 
 .search-bar button {
-    padding: 8px 16px;
-    font-size: 16px;
-    background-color: black; /* Fond noir */
-    color: red; /* Texte rouge */
-    border: 2px solid red; /* Bordure rouge */
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 0 10px red; /* Ombre rouge */
-    transition: background-color 0.3s, color 0.3s;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: black;
+  color: red;
+  border: 2px solid red;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 10px red;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .search-bar button:hover {
-    background-color: red; /* Fond rouge au survol */
-    color: black; /* Texte noir au survol */
-}
-
-.background-image {
-    background: url('../../../Image/OsiB.png') no-repeat center center;
-    background-size: cover;
-    opacity: 0.8; /* Ajustez la transparence */
-    color: white; /* Assurez-vous que le texte reste lisible */
-}
-
-.o-container {
-    display: inline-block;
-    position: relative;
-    width: 1em; /* Taille du "O" */
-    height: 1em; /* Taille du "O" */
-    vertical-align: middle;
-}
-
-.o-image {
-    position: absolute;
-    top: 0; /* Ajustez cette valeur pour déplacer l'image verticalement */
-    left: 0; /* Ajustez cette valeur pour déplacer l'image horizontalement */
-    width: 100%; /* Ajuste la largeur pour remplir le "O" */
-    height: 100%; /* Ajuste la hauteur pour remplir le "O" */
-    object-fit: contain; /* Garde les proportions de l'image */
-    border-radius: 50%; /* Rend l'image circulaire */
+  background-color: red;
+  color: black;
 }
 
 .logo-background {
-    position: relative;
-    padding: 20px;
-    color: white;
-    z-index: 1;
+  position: relative;
+  padding: 20px;
+  color: white;
+  z-index: 1;
 }
 
 .logo-background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('../Image/OsiB.png') no-repeat center center;
-    background-size: contain;
-    opacity: 0.1; /* Transparence uniquement pour l'image */
-    z-index: -1; /* Place l'image derrière le contenu */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../Image/OsiB.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.osib-logo {
+  position: absolute; /* Positionne l'image par rapport au conteneur */
+  bottom: 10px; /* Place l'image à 10px du bas */
+  right: 10px; /* Place l'image à 10px de la droite */
+  width: 50px; /* Ajuste la taille de l'image */
+  height: auto; /* Conserve les proportions */
+  opacity: 0.5; /* Applique une transparence uniquement à l'image */
+  pointer-events: none; /* Empêche l'interaction avec l'image */
+}
+
+.inline-logo {
+    width: 20px; /* Ajustez la taille selon vos besoins */
+    height: auto; /* Conserve les proportions */
+    margin-left: 10px; /* Ajoute un espace entre le texte et l'image */
+    vertical-align: middle; /* Aligne l'image avec le texte */
 }

@@ -128,3 +128,20 @@ header {
     margin-left: 10px; /* Ajoute un espace entre le texte et l'image */
     vertical-align: middle; /* Aligne l'image avec le texte */
 }
+
+.o-container {
+    display: inline-block;
+    position: relative;
+    width: 1em; /* Taille du "O" */
+    height: 1em; /* Taille du "O" */
+    vertical-align: middle; /* Aligne le logo avec le texte */
+}
+
+.o-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ajuste la largeur pour remplir le "O" */
+    height: 100%; /* Ajuste la hauteur pour remplir le "O" */
+    object-fit: contain; /* Garde les proportions de l'image */
+}

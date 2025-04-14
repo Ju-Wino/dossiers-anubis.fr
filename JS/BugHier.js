@@ -2,7 +2,7 @@ if (window.location.pathname.includes('IS-1989.html')) {
     localStorage.setItem('visitedIS1989', 'true');
 }
 
-if (window.location.pathname.includes('hiérarchie.html')) {
+if (window.location.pathname.includes('Hierarchie.html')) {
     if (localStorage.getItem('visitedIS1989') === 'true') {
         const flashImage = document.createElement('div');
         flashImage.id = 'flash-image';

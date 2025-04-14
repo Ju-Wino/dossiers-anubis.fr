@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../../../../../Image/AnuB.png" alt="Logo AnuB" class="logo-img">
+            <img src="../../../../../Image/OsiB.png" alt="Logo AnuB" class="logo-img">
         </div>
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Rechercher une page...">
@@ -19,22 +19,29 @@
     </header>
 
     <div class="container">
-        <h1>BALMUNG</h1>
-        <p>Chef de la Sécurité</p>
+        <h1>LONGINUS</h1>
+        <p>Scientifique en Chef</p>
         <p>Membre du conseil</p>
-        <p>Ancien garde de la société /////////, il fut approché par l'ancien chef de terrain ///////// pour assuré la sécurité de l'organisation</p>
-        <p>Il s'est particuliérememnt illustré lors de la TITANOMACHIE survenue en 20XX</p>
+        <p></p>
+        <p></p>
     </div>
 
     <script>
+        function normalizeString(str) {
+            return str
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        }
+
         function searchPage() {
-            const input = document.getElementById('searchInput').value.trim().toLowerCase(); // Normalise l'entrée
-            const pages = ['damocles', 'IS-1895', 'hierarchie']; // Liste des pages sans extension
+            const input = normalizeString(document.getElementById('searchInput').value.trim());
+            const pages = ['damocles', 'is-1895', 'hierarchie'];
 
             if (pages.includes(input)) {
-                window.location.href = input + '.html'; // Ajoute l'extension pour rediriger
+                window.location.href = input + '.html';
             } else {
-                document.getElementById('errorMessage').style.display = 'block'; // Affiche le message d'erreur
+                document.getElementById('errorMessage').style.display = 'block';
             }
         }
     </script>

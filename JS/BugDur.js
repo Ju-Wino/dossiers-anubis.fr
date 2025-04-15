@@ -1,19 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Délai avant de lancer la vidéo (en millisecondes)
-    const delayBeforeVideo = 5000; // 5 secondes
-
-    // Lance la vidéo après le délai
-    setTimeout(playVideo, delayBeforeVideo);
-
-    // Délai avant de commencer l'animation (en millisecondes)
-    const delayBeforeAnimation = 2000; // 2 secondes
-
     // Texte à afficher lettre par lettre
-    const textToDisplay = "Maintenant que vous savez tout.... vous m'appartiendrais !!!";
+    const textToDisplay = "Maintenant que vous savez tout .... Vous êtes à moi";
     const animationSpeed = 100; // Temps entre chaque lettre (en millisecondes)
+    const delayBeforeAnimation = 2000; // Délai avant de commencer l'animation (en millisecondes)
 
-    // Fonction pour afficher le texte lettre par lettre
     function typeText() {
+        // Crée un conteneur semi-transparent couvrant toute la page
+        const overlay = document.createElement("div");
+        overlay.style.position = "fixed";
+        overlay.style.top = "0";
+        overlay.style.left = "0";
+        overlay.style.width = "100%";
+        overlay.style.height = "100%";
+        overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Semi-transparent
+        overlay.style.zIndex = "9998"; // Derrière le texte
+        document.body.appendChild(overlay);
+
+        // Crée un conteneur pour le texte
         const textContainer = document.createElement("div");
         textContainer.style.position = "fixed";
         textContainer.style.top = "50%";
@@ -26,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         textContainer.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
         textContainer.style.padding = "20px";
         textContainer.style.borderRadius = "10px";
-        textContainer.style.zIndex = "9999";
+        textContainer.style.zIndex = "9999"; // Au-dessus de l'overlay
         document.body.appendChild(textContainer);
 
         let index = 0;

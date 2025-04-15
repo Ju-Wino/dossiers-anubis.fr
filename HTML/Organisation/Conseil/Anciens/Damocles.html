@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../CSS/style.css">
-    <title>Hiérarchie d'Anubis</title>
+    <link rel="stylesheet" href="../../../../../CSS/style.css">
+    <title>Damoclès</title>
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="../../../../../Image/AnuB.png" alt="Logo AnuB" class="logo-img">
+        </div>
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Rechercher une page...">
             <button onclick="searchPage()">Rechercher</button>
@@ -16,17 +19,21 @@
     </header>
 
     <div class="container">
-        <h1>DAMOCLES</h1>
-        <p>Scientifique en chef</p>
-        <p>Membre du conseil</p>
-        <p>Imminent chercheur ayant étudié à ////////, il fut approché par le grand Monarque pour diriger le projet ////////.</p>
-        <p>Il étudia l'IS-1895 d'où il put avoir des échantillons intéressants pour ////////.</p>
-    </div>
+    <h1>
+        DAM<span class="o-container"><img src="../../../../../Image/OsiB.png" alt="O" class="o-image"></span>CLÈS
+    </h1>
+    <p>Ancien Chef de Terrain</p>
+    <p>Ancien Membre du conseil</p>
+    <p>Ancien mercenaire travaillant pour ////////, il mit fin à son activité à cause d'une flèche dans le genou</p>
+    <p>Suite à une opération effectuer par ////////, il monta les échelons jusqu'à devenir le chef de section</p>
+    <p>Il permit à l'ancien scientifique en chef //A///A/A d'avancer sur l'expérience ///////</p>
+    <p>Il commanda l'opération RAGNAROK où il perdit la vie</p>
+</div>
 
     <script>
         function searchPage() {
             const input = document.getElementById('searchInput').value.trim().toLowerCase(); // Normalise l'entrée
-            const pages = ['damocles', 'IS-1895', 'hierarchie']; // Liste des pages sans extension
+            const pages = ['damocles', 'IS-1895', 'hierarchie','shandraha']; // Liste des pages sans extension
 
             if (pages.includes(input)) {
                 window.location.href = input + '.html'; // Ajoute l'extension pour rediriger
@@ -36,4 +43,5 @@
         }
     </script>
 </body>
+<!-- MEURTRE -->
 </html>

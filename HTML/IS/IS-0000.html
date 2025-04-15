@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../CSS/style.css">
+    <title>IS-0113</title>
+</head>
+<body>
+    <header>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Rechercher une page...">
+            <button onclick="searchPage()">Rechercher</button>
+        </div>
+        <p id="errorMessage" style="color: red; display: none; text-align: center;">Page introuvable</p>
+    </header>
+
+    <div class="container">
+        <h1>Thanatopræda</h1>
+        <p>Aussi appelé Prédator Thaniticus</p>
+        <p>Anomalie: NPX-10</p>
+        <p>Entité très dangereuse, il est interdit de porter tout contact visiuelle sur le sujet. Captivité décrite par //////// comme délicate.</p>
+        <p>Confiné dans un zone hautement sécurisé, le sujet semble ne pas être soumis à la gravité et ne semble pas réagir aux fortes lumières malgrès son intérêt pour l'obscurité.</p>
+        <p>>Murs en ///////ium nécessaire pour contenir IS-0113.</p>
+    </div>
+
+    <script>
+        function searchPage() {
+            const input = document.getElementById('searchInput').value.trim().toLowerCase(); // Normalise l'entrée
+            const pages = ['damocles', 'IS-1895', 'hierarchie']; // Liste des pages sans extension
+
+            if (pages.includes(input)) {
+                window.location.href = input + '.html'; // Ajoute l'extension pour rediriger
+            } else {
+                document.getElementById('errorMessage').style.display = 'block'; // Affiche le message d'erreur
+            }
+        }
+    </script>
+</body>
+</html>

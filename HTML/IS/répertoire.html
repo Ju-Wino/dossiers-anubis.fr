@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../CSS/style.css">
+    <link rel="stylesheet" href="../../CSS/styles.css">
     <title>Hiérarchie d'Anubis</title>
 </head>
 <body>
@@ -18,15 +18,6 @@
         <p id="errorMessage" style="color: red; display: none; text-align: center;">Page introuvable</p>
     </header>
 
-    <div class="container">
-        <h1>IS</h1>
-        <p>repertoire IS</p>
-        <p>IS-1895</p>
-        <p>IS-0023</p>
-        <p>IS-1989</p>
-        <p>IS-1306</p>
-    </div>
-
     <script>
         function searchPage() {
             const input = document.getElementById('searchInput').value.trim().toLowerCase(); // Normalise l'entrée
@@ -39,5 +30,108 @@
             }
         }
     </script>
+    
+<div class="container">
+    <h1 class="header-glitch" data-text="ARCHIVES DES ENTITÉS">ARCHIVES DES ENTITÉS</h1>
+
+    <!-- Fiches des monstres -->
+    <div class="monster-card" data-link="IS-0000.html">
+        <h2 class="glitch">Celui qui précédait tout (IS-0000)</h2>
+        <p class="classification">Classification : Inclassable</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : Inclassable</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-0023.html">
+        <h2 class="glitch">Parasomnia (IS-0023)</h2>
+        <p class="classification">Classification : Physique, Rapide</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : PR-8</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-0039.html">
+        <h2 class="glitch">Le son (IS-0039)</h2>
+        <p class="classification">Classification : Non-Physique</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : NP-7</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-0067(vide).html">
+        <h2 class="glitch">vide</h2>
+        <p class="classification">Classification : </p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : </span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-0113.html">
+        <h2 class="glitch">Thanatopræda (IS-0113)</h2>
+        <p class="classification">Classification : Non-Physique, X</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : NPX-10</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-0413.html">
+        <h2 class="glitch">Checkeurs (IS-0413)</h2>
+        <p class="classification">Classification : Physique, Lent</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : PL-1</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-1033.html">
+        <h2 class="glitch">Le consolateur (IS-1033)</h2>
+        <p class="classification">Classification : Physique</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : P-2</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-1306.html">
+        <h2 class="glitch">The Tracker (IS-1306)</h2>
+        <p class="classification">Classification : Physique, Rapide</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : PR-8</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-1890(vide).html">
+        <h2 class="glitch">vide</h2>
+        <p class="classification">Classification : </p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : </span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-1895.html">
+        <h2 class="glitch">SkinCrawler (IS-1895)</h2>
+        <p class="classification">Classification : Physique, Rapide</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : PR-6</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-1919.html">
+        <h2 class="glitch">Shellskull (IS-1919)</h2>
+        <p class="classification">Classification : </p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : </span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-1989.html">
+        <h2 class="glitch">Braineater (IS-1989)</h2>
+        <p class="classification">Classification : Non-physique</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : NP-6</span></p>
+    </div>
+
+    <div class="monster-card" data-link="IS-2010.html">
+        <h2 class="glitch">Fleuble (IS-2010)</h2>
+        <p class="classification">Classification : Physique, Lent</p>
+        <p class="danger"><span data-danger="eleve">Niveau de Danger : PL-1</span></p>
+    </div>
+
+    
+    <!-- Lien vers les explications des classifications -->
+    <footer>
+        <p>Pour plus d'informations sur les classifications et particularités, visitez la page : 
+            <a href="classifications.html">Explications des classifications</a>
+        </p>
+    </footer>
+</div>
+<script>
+    // Rendre chaque carte cliquable
+    document.querySelectorAll('.monster-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const link = card.getAttribute('data-link');
+            if (link) {
+                window.location.href = link;
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

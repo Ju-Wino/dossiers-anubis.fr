@@ -28,19 +28,26 @@
         <p>Monsieur <strong>"GUNGNIR"</strong> stipule dans son journal que, d'après ses témoignages, <strong>n'aurait vu le visage de IS-1033</strong>, toujours caché par quelque chose, comme de la lumière ou le plafond d'un escalier qui descend.</p>
         <p>IS-1033 comuniquerait à ses personnes en les rassurant, les félicitant, et en parlant de leur vie en détail.<strong>(Contenu sensible et privé restreint — référez-vous à votre supérieur.)</strong></p>
         <p>Une phrase revenait souvent dans les témoignages, selon Monsieur <strong>"GUNGNIR"</strong> :</p>
-        <p><strong>"Tu es la personne la plus talentueuse, la plus intéressante et la plus extraordinaire de l’univers. Et tu es capable de choses incroyables."</strong></p>
+        <p><strong>"Tu es la personne la plus talentueuse, la plus intéressante et la plus extraordinaire de l'univers. Et tu es capable de choses incroyables."</strong></p>
         <p>Ses bienfaits et les résultats obtenus sur les gens ayant été la cible de IS-1033 lui ont valu le nom de "Consolateur". <strong>Enquête en cours d’acheminement, mais aucune capture n'est prévue.</strong></p>
     </div>
 
     <script>
+        function normalizeString(str) {
+            return str
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        }
+
         function searchPage() {
-            const input = document.getElementById('searchInput').value.trim().toLowerCase(); // Normalise l'entrée
-            const pages = ['damocles', 'IS-1895', 'hierarchie']; // Liste des pages sans extension
+            const input = normalizeString(document.getElementById('searchInput').value.trim());
+            const pages = ['damocles', 'is-1895', 'hierarchie'];
 
             if (pages.includes(input)) {
-                window.location.href = input + '.html'; // Ajoute l'extension pour rediriger
+                window.location.href = input + '.html';
             } else {
-                document.getElementById('errorMessage').style.display = 'block'; // Affiche le message d'erreur
+                document.getElementById('errorMessage').style.display = 'block';
             }
         }
     </script>

@@ -31,16 +31,29 @@
 </div>
 
     <script>
-        function searchPage() {
-            const input = document.getElementById('searchInput').value.trim().toLowerCase(); // Normalise l'entrée
-            const pages = ['damocles', 'IS-1895', 'hierarchie','shandraha']; // Liste des pages sans extension
+    function normalizeString(str) {
+        return str
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+    }
 
-            if (pages.includes(input)) {
-                window.location.href = input + '.html'; // Ajoute l'extension pour rediriger
-            } else {
-                document.getElementById('errorMessage').style.display = 'block'; // Affiche le message d'erreur
-            }
+    function searchPage() {
+        const input = normalizeString(document.getElementById('searchInput').value.trim());
+        const pages = [
+            'damocles', 'is-1895', 'hierarchie', 'titanomachie', 'ragnarok', 'osiris', 
+            'genese', 'nyerlatotep', 'shandraha', 'longinus', 'gungnir', 'balmung', 
+            'ascalone', 'durandal', 'répertoire', 'is-1989', 'is-2010', 'is-1919', 
+            'is-1306', 'is-1033', 'is-0413', 'is-0113', 'is-0039', 'is-0023', 
+            'is-0000', 'prez', 'guide', 'autentification', 'faussepiste', 'necronomicon'
+        ];
+
+        if (pages.includes(input)) {
+            window.location.href = input + '.html';
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
         }
+    }
     </script>
 </body>
 <!-- MEURTRE -->

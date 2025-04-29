@@ -131,6 +131,24 @@
             }
         });
     });
+
+    function normalizeString(str) {
+            return str
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function searchPage() {
+            const input = normalizeString(document.getElementById('searchInput').value.trim());
+            const pages = ['damocles', 'is-1895', 'hierarchie'];
+
+            if (pages.includes(input)) {
+                window.location.href = input + '.html';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        }
 </script>
 
 </body>

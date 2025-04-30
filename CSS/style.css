@@ -4,30 +4,48 @@ body {
   align-items: center;
   height: 85vh;
   margin: 0;
-  background-color: black;
-  color: red;
-  font-family: 'Courier New', Courier, monospace;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #c4c4c4;
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
-  padding-top: 60px;
+  text-transform: uppercase;
 }
 
 .container {
-  position: relative;
+  width: 85%;
+  margin: auto;
   padding: 20px;
+  text-align: left;
   color: white;
-  z-index: 1;
   border: 2px solid red;
-  display: inline-block;
   box-shadow: 0 0 20px red;
 }
 
-h1 {
-  font-size: 3em;
+h1, h2 {
+  font-size: 2.5em;
+  color: #ff0000;
   text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+h1.header-glitch {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #ff0000;
+  padding-bottom: 10px;
+  animation: glitch 0.8s infinite alternate;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px 0 #ff0000, -2px -2px 0 #ff0000; }
+  100% { text-shadow: -2px -2px 0 #ff0000, 2px 2px 0 #ff0000; }
 }
 
 p {
   font-size: 1.2em;
+  line-height: 1.5;
 }
 
 header {
@@ -37,11 +55,11 @@ header {
   background-color: black;
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(255, 0, 0, 0.5);
-  z-index: 1000;
   border-bottom: 2px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1000;
 }
 
 .logo-img {
@@ -59,14 +77,18 @@ header {
   background-color: black;
 }
 
-.search-bar input {
+.search-bar input, .search-bar button {
   padding: 8px;
   font-size: 16px;
-  margin-right: 10px;
   border: 2px solid red;
   border-radius: 4px;
   background-color: black;
   color: red;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-bar input {
+  margin-right: 10px;
   width: 70%;
 }
 
@@ -76,15 +98,8 @@ header {
 }
 
 .search-bar button {
-  padding: 8px 16px;
-  font-size: 16px;
-  background-color: black;
-  color: red;
-  border: 2px solid red;
-  border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 0 10px red;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .search-bar button:hover {
@@ -92,56 +107,79 @@ header {
   color: black;
 }
 
-.logo-background {
-  position: relative;
+.monster-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  justify-items: center;
   padding: 20px;
-  color: white;
-  z-index: 1;
 }
 
-.logo-background::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('../Image/OsiB.png') no-repeat center center;
-  background-size: contain;
-  opacity: 0.1;
-  z-index: -1;
+.monster-list img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 2px solid #ff0000;
+  filter: grayscale(40%) contrast(120%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.osib-logo {
-  position: absolute; /* Positionne l'image par rapport au conteneur */
-  bottom: 10px; /* Place l'image à 10px du bas */
-  right: 10px; /* Place l'image à 10px de la droite */
-  width: 50px; /* Ajuste la taille de l'image */
-  height: auto; /* Conserve les proportions */
-  opacity: 0.5; /* Applique une transparence uniquement à l'image */
-  pointer-events: none; /* Empêche l'interaction avec l'image */
+.monster-list img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
 }
 
-.inline-logo {
-    width: 20px; /* Ajustez la taille selon vos besoins */
-    height: auto; /* Conserve les proportions */
-    margin-left: 10px; /* Ajoute un espace entre le texte et l'image */
-    vertical-align: middle; /* Aligne l'image avec le texte */
+.monster-card {
+  background-color: #121212;
+  border: 2px solid #ff0000;
+  padding: 25px;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  transition: transform 0.3s ease;
 }
 
-.o-container {
-    display: inline-block;
-    position: relative;
-    width: 1em; /* Taille du "O" */
-    height: 1em; /* Taille du "O" */
-    vertical-align: middle; /* Aligne le logo avec le texte */
+.monster-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
 }
 
-.o-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Ajuste la largeur pour remplir le "O" */
-    height: 100%; /* Ajuste la hauteur pour remplir le "O" */
-    object-fit: contain; /* Garde les proportions de l'image */
+.monster-card h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  border-bottom: 2px dashed #ff0000;
+  padding-bottom: 5px;
+}
+
+.monster-card p {
+  font-size: 0.9em;
+  color: #b0b0b0;
+  font-weight: bold;
+}
+
+.monster-card .danger,
+.monster-card .classification,
+.monster-card .description,
+.monster-card .capabilities,
+.monster-card .vulnerabilities {
+  margin: 15px 0;
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 10px;
+  border-left: 4px solid #ff0000;
+}
+
+.footer-note {
+  font-size: 0.75em;
+  color: #ff0000;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 2px dashed #ff0000;
+  padding-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #ff0000;
+  font-weight: bold;
 }

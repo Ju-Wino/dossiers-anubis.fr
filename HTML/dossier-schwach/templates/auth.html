@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="icon" type="image/avif" href="../image/logo.avif">
+    <link rel="stylesheet" href="../static/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="auth-header">
+        <nav>
+            <img src="../image/logo.avif" alt="DOSSIER SCHWACH" class="logo">
+            <a href="..//templates/index.html" class="btn-back">
+                <i class="fas fa-arrow-left"></i> Retour
+            </a>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-tabs">
+            <button class="tab-btn active" data-tab="login">Connexion</button>
+            <button class="tab-btn" data-tab="signup">Inscription</button>
+        </div>
+
+        <form id="login-form" class="auth-form active">
+            <div class="input-group">
+                <input type="email" id="login-email" required>
+                <label for="login-email">Email ou numéro de téléphone</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="login-password" required>
+                <label for="login-password">Mot de passe</label>
+                <button type="button" class="toggle-password">
+                    <i class="far fa-eye"></i>
+                </button>
+            </div>
+            <button type="submit" class="btn-auth">S'identifier</button>
+            <div class="auth-helpers">
+                <label class="remember-me">
+                    <input type="checkbox" checked>
+                    Se souvenir de moi
+                </label>
+                <a href="#" class="help-link">Besoin d'aide ?</a>
+            </div>
+        </form>
+
+        <form id="signup-form" class="auth-form">
+            <div class="input-group">
+                <input type="text" id="signup-name" required>
+                <label for="signup-name">Nom complet</label>
+            </div>
+            <div class="input-group">
+                <input type="email" id="signup-email" required>
+                <label for="signup-email">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="signup-password" required>
+                <label for="signup-password">Créez un mot de passe</label>
+                <button type="button" class="toggle-password">
+                    <i class="far fa-eye"></i>
+                </button>
+            </div>
+            <div class="input-group">
+                <input type="tel" id="signup-phone">
+                <label for="signup-phone">Téléphone (optionnel)</label>
+            </div>
+            <button type="submit" class="btn-auth">S'inscrire</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>En vous inscrivant, vous acceptez nos <a href="#">Conditions d'utilisation</a> et notre <a href="#">Politique de confidentialité</a>.</p>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+</body>
+</html>

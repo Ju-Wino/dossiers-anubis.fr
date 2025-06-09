@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infos</title>
+    <link rel="icon" type="image/avif" href="../image/logo.avif">
+    <link rel="stylesheet" href="../static/info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="netflix-header">
+        <nav>
+            <img src="../image/logo.avif" alt="CinéFlix" class="logo">
+            <div class="nav-right">
+                <a href="../templates/index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Retour
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="film-info-container">
+        <div class="film-header">
+            <h1>DOSSIER SCHWACH</h1>
+            <div class="film-meta">
+                <span class="rating-badge">10+</span>
+                <span class="duration">25 min</span>
+                <span class="genre">Horreur</span>
+            </div>
+        </div>
+
+        <div class="film-content">
+            <div class="film-poster" style="background-image: url('assets/film-poster.jpg')"></div>
+            
+            <div class="film-details">
+                <div class="synopsis">              
+                    <h2>Synopsis</h2>
+                    <p>Adam Schwach s'arrête dans un hôtel isolé avant un repas familial, sans imaginer que cette nuit va bouleverser sa famille. Des phénomènes étranges apparaissent autour de lui, de son frère et de sa sœur, liés à l'implication récente de leurs parents dans une organisation secrète.</p>
+                </div>
+
+                <div class="actors-section">
+                    <h2>Acteurs en vedette</h2>
+                    <div class="actors-grid">
+                        <div class="actor-card">
+                            <div class="actor-img" style="background-image: url('../image/acteur1.png')"></div>
+                            <h3>Loïc Bier</h3>
+                        </div>
+                        <div class="actor-card">
+                            <div class="actor-img" style="background-image: url('../image/acteur2.png')"></div>
+                            <h3>Victor Munsch</h3>
+                        </div>
+                        <div class="actor-card">
+                            <div class="actor-img" style="background-image: url('../image/acteur3.png')"></div>
+                            <h3>Julie Lefebvre</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <img src="../image/affiche2.jpg" height="200"> 
+                    <h2>Notez le film</h2>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <p class="rating-text">Votre note: <span id="current-rating">0</span>/5</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="film.html" class="btn-trailer">
+                <i class="fas fa-play"></i> Voir le film
+            </a>
+        </div>
+    </main>
+
+    <script src="../js/info.js"></script>
+</body>
+</html>

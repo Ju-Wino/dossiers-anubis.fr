@@ -80,41 +80,6 @@
 </head>
 <body>
 
-  <button id="startBtn">Dirigez-vous vers votre chambre</button>
-
-  <div id="scene"></div>
-  <div id="fade"></div>
-  <div id="sceneText"></div>
-  <input type="text" id="codeInput" placeholder="écoutez les lumières" style="
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.5em;
-  font-size: 1.5em;
-  display: none;
-  z-index: 12;
-  border-radius: 10px;
-  border: none;
-  text-align: center;
-">
-
-<div id="endMessage" style="
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 2em;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 1em 2em;
-  border-radius: 10px;
-  display: none;
-  z-index: 12;
-  text-align: center;
-"></div>
-
-
   <audio id="ambiance" src="sons/ambiance.mp3" loop autoplay hidden></audio>
 
   <script>
@@ -547,9 +512,6 @@ if (value === expectedCode) {
     sceneDiv.style.backgroundImage = 'black';
   }, 2500);
 
-  setTimeout(() => {
-    endMessage.style.display = 'none';
-  }, 5000);
 
   setTimeout(() => {
     endMessage.textContent = "Vous avez échoué, souvenez-vous : les lumières sont votre seul indice";

@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const password = document.getElementById('login-password').value;
 
     // Remplace par ton ID/mdp souhaité
-    const validEmail = "test@gmail.com";
-    const validPassword = "123456";
+    const validEmail = "georges.schwach";
+    const validPassword = "7049";
 
     if (email === validEmail && password === validPassword) {
         window.open("_blank");

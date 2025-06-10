@@ -85,16 +85,17 @@
   <div id="scene"></div>
   <div id="fade"></div>
   <div id="sceneText"></div>
-  <input type="text" id="codeInput" placeholder="écoutez les lumières" style="
+  <input type="text" id="codeInput" placeholder="Le morse est dans la salle de bain" style="
   position: absolute;
   bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   padding: 0.5em;
-  font-size: 1.5em;
+  font-size: 2em;
   display: none;
   z-index: 12;
-  border-radius: 10px;
+  border-radius: 20px;
+  width: 90%;
   border: none;
   text-align: center;
 ">
@@ -532,33 +533,47 @@ if (value === expectedCode) {
   runSequence();
 
 } else {
-  endMessage.textContent = '';
-  endMessage.style.display = 'block';
+       endMessage.textContent = '';
+      endMessage.style.display = 'block';
+      endMessage.style.opacity = 0;
+      endMessage.style.transition = 'opacity 2s ease';
 
-  sceneDiv.style.backgroundImage = 'url(images/chambrenuit.jpg)';
-  fadeDiv.style.opacity = 1;
+      sceneDiv.style.backgroundImage = 'url(images/chambrenuit.jpg)';
+      fadeDiv.style.opacity = 1;
 
-  setTimeout(() => {
-    playSound('sons/dooropen.wav');
-  }, 1000);
+      setTimeout(() => {
+        playSound('sons/dooropen.wav');
+      }, 1000);
 
-  setTimeout(() => {
-    playSound('sons/run.wav');
-    sceneDiv.style.backgroundImage = 'black';
-  }, 2500);
+      setTimeout(() => {
+        playSound('sons/run.wav');
+        sceneDiv.style.background = 'black';
+      }, 2500);
 
+      setTimeout(() => {
+        endMessage.textContent = "Vous avez échoué, souvenez-vous : les lumières sont votre seul indice";
+        endMessage.style.opacity = 1;
+      }, 4000);
 
-  setTimeout(() => {
-    endMessage.textContent = "Vous avez échoué, souvenez-vous : les lumières sont votre seul indice";
-    endMessage.style.opacity = 1;
-  }, 6000);
-
-  setTimeout(() => {
-    window.close();
-  }, 4000);
+      setTimeout(() => {
+        document.body.innerHTML = `
+          <div style="
+            color: white;
+            font-family: 'Courier New', monospace;
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20vh;
+            background: black;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          ">
+            Fin de la simulation
+          </div>`;
+      }, 10000);
+    }
   }
-}
-
 });
 
 </script>

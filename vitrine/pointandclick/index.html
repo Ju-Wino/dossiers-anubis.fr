@@ -552,6 +552,11 @@ if (value === expectedCode) {
   }, 5000);
 
   setTimeout(() => {
+    endMessage.textContent = "Vous avez échoué, souvenez-vous : les lumières sont votre seul indice";
+    endMessage.style.opacity = 1;
+  }, 6000);
+
+  setTimeout(() => {
     window.close();
   }, 4000);
   }

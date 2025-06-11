@@ -27,14 +27,10 @@
         <p>Statut actuel : Inconnu</p>
     </div>
 
-    <div class="tyfUGTraIyd"></div>
-
-
-    
+    <div class ="P1w6zr3ubgtn4"></div>
 
     <script src="../../../../../JS/BugShan.js"></script>
     <script>
-        
         function normalizeString(str) {
             return str
                 .toLowerCase()
@@ -44,10 +40,49 @@
 
         function searchPage() {
             const input = normalizeString(document.getElementById('searchInput').value.trim());
-            const pages = ['damocles', 'is-1895', 'hierarchie'];
+            const pages = {
+                // 'repertoire' : 'repertoire',
+                'is-0000': 'IS-0000',
+                'is-0023': 'IS-0023',
+                'is-0039': 'IS-0039',
+                'is-0067': 'IS-0067',
+                'is-0113': 'IS-0113',
+                'is-0413': 'IS-0413',
+                'is-1033': 'IS-1033',
+                'is-1306': 'IS-1306',
+                'is-1890': 'IS-1890',
+                'is-1895': 'IS-1895',
+                'is-1919': 'IS-1919',
+                'is-1989': 'IS-1989',
+                'is-2010': 'IS-2010',
+                'index': 'index',
+                'guide': 'guide',
+                'hierarchie': 'hierarchie',
+                'necronomicon': 'necronomicon',
+                'X3f7za5sdfsd8' : 'organisation/notes/X3f7za5sdfsd8',
+                'P1w6zr3ubgtn4': 'organisation/notes/P1w6zr3ubgtn4',
+                'Hk7gi4TdFgH5': 'organisation/notes/Hk7gi4TdFgH5n',
+                'M4n8jc2sklvo9': 'organisation/notes/M4n8jc2sklvo9',
+                'Z9k2vb8lqwrm3': 'organisation/notes/Z9k2vb8lqwrm3',
+                'L7e3xp9dvqsa6': 'organisation/notes/L7e3xp9dvqsa6', 
+                'durandal': 'organisation/cobayes/durandal',
+                'ascalone': 'organisation/conseils/ascalone',
+                'balmung': 'organisation/conseils/balmung',
+                'gungnir': 'organisation/conseils/gungnir',
+                'longinus': 'organisation/conseils/longinus',
+                'damocles': 'organisation/conseils/damocles',
+                'shanraha': 'organisation/conseils/shandraha',
+                'nyerlathotep': 'organisation/conseils/nyerlatotep',
+                'genese': 'organisation/conseils/genese',
+                'osiris': 'organisation/conseils/osiris',
+                'ragnarok': 'organisation/conseils/ragnarok$',
+                'titanomachie': 'organisation/conseils/titanomachie',
+            };
 
-            if (pages.includes(input)) {
-                window.location.href = input + '.html';
+            document.getElementById('errorMessage').style.display = 'none';
+
+            if (pages[input]) {
+                window.location.href = pages[input];
             } else {
                 document.getElementById('errorMessage').style.display = 'block';
             }

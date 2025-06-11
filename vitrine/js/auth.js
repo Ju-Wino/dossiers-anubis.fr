@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const validPassword = "7049";
 
     if (email === validEmail && password === validPassword) {
-        window.open("_blank");
+        window.open("dossier-schwach/");
     } else {
         alert("Identifiants incorrects.");
     }
